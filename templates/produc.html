@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+
+<form method="get">
+   <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="form-group">
+            <label for="username">Filtrar:</label>
+            <input class="form-control" type="text" name="filtro">
+            <input class="btn btn-primary" type="submit" value="Filtrar">
+         </div>
+        </div>
+    </div>
+</form>
+
+{% for x in datos.products  %}
+<p><h4>Titulo:</h4>{{ x.title }}</p>
+
+<img src="{{ x.image_url }}" alt="" width="200px"><br>
+<p><h4>Precio: {{ x.price }} </h4></p><br>
+{% endfor %}
+
+{% endblock %}
