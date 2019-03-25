@@ -34,7 +34,7 @@ def listar_view(request):
     if 'filtro' in request.GET:
         if request.GET['filtro'] != '':
             datos2 = {'products': []}
-            for x in range(len(produc)):
+            for x in range(len(produc['products'])):
                 if produc['products'][x]['title'] == request.GET['filtro']:
                     datos2['products'].append(produc['products'][x])
             return render(request, 'produc.html', {'datos': datos2})
